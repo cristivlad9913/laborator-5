@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma pack(1)
+struct human
+{
+   char buletin:1,casatorie:1,licenta:1,master:1,doctorat:1,fisa_lichidare:1,certificat_nastere:1;
+};
+int main()
+{
+struct human r;
+printf("%d",sizeof(r));
+    return 0;
+}

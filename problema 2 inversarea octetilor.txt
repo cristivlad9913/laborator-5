@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+union codif
+{
+    unsigned short int x; //ocupa doar 2 octeti de exemplu 0010 1100
+    char a[2]; //permite accesarea fiecarui octet in parte,a[0] fiind 0010 si a[1] 1100
+
+};
+char b=NULL;
+
+int main()
+{
+    union codif r;
+   char aux;
+char *p,*q;
+    scanf("%hu",&r.x);
+    printf("%hu\n",r.x);
+ /*  b=r.a[0];
+    r.a[0]=r.a[1]; inverseaza cei 2 octeti prin uniune (a[0]=primul octet,a[1]=al 2lea octet)
+    r.a[1]=b;
+   */
+
+/*
+p=&r.a[0];
+q=&r.a[1];
+aux=*p;
+*p=*q;
+*q=aux;
+printf("%hu",r.x);
+
+inverseaza cei 2 octeti prin schimbarea
+valorilor aflate la adrese ( p primeste adresa primului octet,q adresa celui de-al 2lea)
+
+*/
+    return 0;
+}

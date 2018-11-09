@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+union indian
+{
+    short int y;
+    char vect[2];
+};
+int main()
+{
+    /*testeaza arhitectura sistemului,adica modul in care pc ul citeste,de la stanga la dreapta(little indian)
+    sau invers(big indian)*/
+     union indian a;
+     scanf("%hd",&a.y);
+    if(arch.vect[0]==1)
+        printf("arhitectura little indian");
+    else
+        printf("arhitectura big indian");
+
+    return 0;
+}

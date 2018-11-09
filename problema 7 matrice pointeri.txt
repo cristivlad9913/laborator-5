@@ -1,0 +1,52 @@
+#include stdio.h
+#include stdlib.h
+
+int main()
+{int i,n,j,y,k;
+
+   scanf(%d,&n);
+   int a[n][n];
+for(i=0;inn;i++)
+   scanf(%d,a+i); a+i este echivalent cu a[i][j];
+    for(i=0;in;i++)
+     { for(j=0;jn;j++)
+
+       printf(%d ,a[i][j]);
+
+       printf(n);
+
+     }
+
+  y=(n+1)2;
+  printf(elementul de la intersectia diag %dn,((a+y)+y));
+printf(citeste k);
+scanf(%d,&k);
+printf(coloana kn);
+for(i=0;in;i++)
+{
+    printf(%d ,((a+k)+ni));
+}
+printf(nnn);
+printf(linia kn);
+for(j=0;jn;j++)
+{
+    printf(%d ,((a+nk)+j));
+}
+printf(nnn);
+printf(diag principala n);
+int p=0;
+for(j=0;jn;j++)
+{
+    printf(%d ,((a+nj+p)));  a+n inseamna primul element de pe linia urmatoare,
+    p++;
+}
+printf(nnn);
+printf(diag secundara n);
+p=1;
+for(j=0;jn;j++)
+{
+    printf(%d ,((a+np)-p));
+    p++;
+}
+    return 0;
+}

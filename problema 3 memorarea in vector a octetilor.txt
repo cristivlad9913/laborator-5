@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+union vector
+{
+    int x;  //se ia x intreg reprezentat pe 4 octeti de exemplu 0100 0110 1111 0000
+    char a[4]; //a[0]=0100,a[1]=0110,a[2]=1111,a[3]=0000
+};
+char *p;
+char v[4];
+
+int main()
+{
+    union vector r;
+int i=0,y=0;
+    scanf("%d",&r.x);
+ while(i<4)
+    {
+        p=&r.a[i];
+        v[i]=*p;
+        i++;
+        /*
+        "rupem" fiecare octet si il retinem in v
+        */
+    }
+    for(i=0;i<4;i++)
+        {
+            printf("%d ",v[i]);
+        }
+            y=v[0]+v[1]*pow(2,8)+v[2]*pow(2,12)+v[3]*pow(2,16); //refacem numarul initial
+            printf("\n\n\n\n");
+        printf("%d",y);
+
+
+
+
+    return 0;
+}

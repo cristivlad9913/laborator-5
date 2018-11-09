@@ -1,0 +1,96 @@
+#include stdio.h
+#include stdlib.h
+
+struct locuinta
+{
+
+    char adresa[100];
+    float suprafata;
+    int nr_camere;
+    char tip[30];
+   union gars
+    {
+short int balcon;
+char apartament;   se va memora doar un element in functie de tipul locuintei
+char casa[30];
+    }v;
+};
+int main()
+{
+    int n,i;
+    struct locuinta a[100];
+     scanf(%d,&n);
+     for(i=0;in;i++)
+     {
+          fflush(stdin); goleste buffer-ul pentru a nu avea probleme la fgets care citeste si n(enter-ul)
+        printf(adresa %d ,i);
+        fgets(a[i].adresa,100,stdin);
+        printf(suprafata %d ,i);
+        scanf(%d,&a[i].suprafata);
+        printf(nr_camere %d ,i);
+        scanf(%d,&a[i].nr_camere);
+        printf(tip %d ,i);
+        fflush(stdin);
+        fgets(a[i].tip,30,stdin);
+        fflush(stdin);
+         if(strcmp(a[i].tip,garsonieran)==0)
+         {
+             printf(balcon 10 %d ,i);     in caz ca locuinta e garsoniera(se compara si cu n din citire) atunci se memoreaza doar daca are balcon
+             scanf(%hu,&a[i].v.balcon);
+         }
+         else
+          if(strcmp(a[i].tip,apartamentn)==0)
+         {
+             printf(apartament DN %d ,i); analog garsoniera
+             scanf(%c,&a[i].v.apartament);
+         }
+         else
+          if(strcmp(a[i].tip,casan)==0)
+         {
+
+             printf(casa pe solparter+mansardanr etaje %d ,i); analog apartament
+               fgets(a[i].v.casa,30,stdin);
+         }
+         printf(n);
+     }
+     for(i=0;in;i++)
+     {
+         printf(element %d n,i);
+        printf(%sn,a[i].adresa);
+         printf(%fn,a[i].suprafata);
+          printf(%dn,a[i].nr_camere);
+           printf(%sn,a[i].tip);
+            if(strcmp(a[i].tip,garsonieran)==0)
+         {
+
+            printf(balcon %hu,a[i].v.balcon);
+         }
+         else
+          if(strcmp(a[i].tip,apartamentn)==0)
+         {
+
+             printf(%c,a[i].v.apartament);
+         }
+         else
+          if(strcmp(a[i].tip,casan)==0)
+         {
+
+               printf(%s,a[i].v.casa);
+         }
+         printf(n);
+
+     }
+     int p,maxim=0;
+     for(i=0;in;i++)
+     {
+         if(strcmp(a[i].tip,garsonieran)==0 && a[i].v.balcon==1 && a[i].suprafatamaxim)
+         {
+             maxim=a[i].suprafata;
+             p=i;
+         }
+     }
+     printf(nnn);
+     printf(adresa garsonierei cu ce se ceren);
+     printf(%s,a[p].adresa);
+    return 0;
+}
