@@ -1,51 +1,51 @@
-#include stdio.h
-#include stdlib.h
+#include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {int i,n,j,y,k;
 
-   scanf(%d,&n);
+   scanf("%d",&n);
    int a[n][n];
-for(i=0;inn;i++)
-   scanf(%d,a+i); a+i este echivalent cu a[i][j];
-    for(i=0;in;i++)
-     { for(j=0;jn;j++)
+for(i=0;i<n*n;i++)
+   scanf("%d",*a+i); //*a+i este echivalent cu a[i][j];
+    for(i=0;i<n;i++)
+     { for(j=0;j<n;j++)
 
-       printf(%d ,a[i][j]);
+       printf("%d ",a[i][j]);
 
-       printf(n);
+       printf("\n");
 
      }
 
-  y=(n+1)2;
-  printf(elementul de la intersectia diag %dn,((a+y)+y));
-printf(citeste k);
-scanf(%d,&k);
-printf(coloana kn);
-for(i=0;in;i++)
+  y=(n+1)/2;
+  printf("elementul de la intersectia diag: %d\n",*((*a+y)+y));
+printf("citeste k:");
+scanf("%d",&k);
+printf("coloana k\n");
+for(i=0;i<n;i++)
 {
-    printf(%d ,((a+k)+ni));
+    printf("%d ",*((*a+k)+n*i));
 }
-printf(nnn);
-printf(linia kn);
-for(j=0;jn;j++)
+printf("\n\n\n");
+printf("linia k\n");
+for(j=0;j<n;j++)
 {
-    printf(%d ,((a+nk)+j));
+    printf("%d ",*((*a+n*k)+j));
 }
-printf(nnn);
-printf(diag principala n);
+printf("\n\n\n");
+printf("diag principala \n");
 int p=0;
-for(j=0;jn;j++)
+for(j=0;j<n;j++)
 {
-    printf(%d ,((a+nj+p)));  a+n inseamna primul element de pe linia urmatoare,
+    printf("%d ",*((*a+n*j+p)));  //*a+n inseamna primul element de pe linia urmatoare,
     p++;
 }
-printf(nnn);
-printf(diag secundara n);
+printf("\n\n\n");
+printf("diag secundara \n");
 p=1;
-for(j=0;jn;j++)
+for(j=0;j<n;j++)
 {
-    printf(%d ,((a+np)-p));
+    printf("%d ",*((*a+n*p)-p));
     p++;
 }
     return 0;
